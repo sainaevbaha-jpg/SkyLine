@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Pulse — Feel the Vibe</title>
 <style>
-/* ═══════════════════════════════════════════
-   ПЕРЕМЕННЫЕ — светлая тема по умолчанию
-═══════════════════════════════════════════ */
 :root {
   --bg: #f5f5f7;
   --card: #ffffff;
@@ -37,15 +34,10 @@ body.dark {
   --header-bg: rgba(15,15,19,0.95);
   --shadow: 0 2px 24px rgba(108,99,255,0.15);
 }
-
-/* ── RESET & BASE ──────────────────────── */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;transition:background-color .25s,border-color .25s,color .25s;}
 body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflow-x:hidden;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;font-size:15px;line-height:1.5;}
-
-/* ── SCROLLBAR ─────────────────────────── */
 ::-webkit-scrollbar{width:0;height:0;}
 
-/* ── SPLASH SCREEN ─────────────────────── */
 #splash{position:fixed;inset:0;z-index:99999;background:linear-gradient(145deg,#6c63ff 0%,#a78bfa 50%,#f43f5e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;animation:splash-hide 0.5s ease 1.8s forwards;}
 #splash.hide{opacity:0;pointer-events:none;}@keyframes splash-hide{to{opacity:0;pointer-events:none;visibility:hidden;}}
 .splash-logo{font-size:52px;font-weight:900;letter-spacing:-2px;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,0.2);}
@@ -54,16 +46,11 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .splash-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);margin-top:40px;animation:pulse-dot 1.2s ease-in-out infinite;}
 @keyframes pulse-dot{0%,100%{transform:scale(1);opacity:.5;}50%{transform:scale(1.4);opacity:1;}}
 
-/* ── TOAST ─────────────────────────────── */
 #toast{position:fixed;bottom:96px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(26,26,36,0.96);backdrop-filter:blur(20px);color:#fff;padding:11px 22px;border-radius:50px;z-index:9999;font-size:13px;font-weight:500;opacity:0;transition:all .35s cubic-bezier(.175,.885,.32,1.275);border:1px solid rgba(255,255,255,.08);white-space:nowrap;}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
-/* ── AVATAR ────────────────────────────── */
 .ava{border-radius:50%;object-fit:cover;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
 
-/* ══════════════════════════════════════════
-   AUTH SCREENS
-══════════════════════════════════════════ */
 .auth-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:20px;background:linear-gradient(160deg,var(--bg) 0%,var(--card) 100%);}
 .auth-box{width:100%;max-width:380px;background:var(--card);border:1px solid var(--border);padding:36px 28px;border-radius:28px;text-align:center;box-shadow:var(--shadow);}
 .auth-logo-mini{font-size:26px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px;}
@@ -71,9 +58,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .inp:focus{border-color:var(--primary);}
 .err{color:#f43f5e;font-size:13px;margin-bottom:10px;background:rgba(244,63,94,.08);padding:8px 14px;border-radius:10px;display:none;}
 
-/* ══════════════════════════════════════════
-   BUTTONS
-══════════════════════════════════════════ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;font-weight:600;cursor:pointer;border:none;transition:opacity .15s,transform .1s;}
 .btn:active{transform:scale(.97);}
 .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;padding:13px 20px;border-radius:var(--radius-sm);width:100%;font-size:15px;}
@@ -86,9 +70,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .btn-unfollow{background:var(--input-bg);color:var(--text);}
 .btn-friends{background:linear-gradient(135deg,var(--green),#34d399);color:#fff;}
 
-/* ══════════════════════════════════════════
-   LAYOUT
-══════════════════════════════════════════ */
 .header{position:sticky;top:0;background:var(--header-bg);backdrop-filter:blur(16px);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);z-index:500;}
 .header-logo{font-size:22px;font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .header-actions{display:flex;gap:8px;align-items:center;}
@@ -103,9 +84,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .empty-title{font-size:16px;font-weight:700;margin-bottom:6px;}
 .empty-sub{font-size:13px;color:var(--sub);}
 
-/* ══════════════════════════════════════════
-   BOTTOM NAV
-══════════════════════════════════════════ */
 .nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:500px;background:var(--nav-bg);backdrop-filter:blur(20px);border-top:1px solid var(--border);display:flex;justify-content:space-around;padding:8px 0 12px;border-radius:24px 24px 0 0;z-index:400;}
 .nav-btn{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 18px;border-radius:14px;transition:background .2s;position:relative;}
 .nav-btn:hover{background:var(--input-bg);}
@@ -113,20 +91,13 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .nav-btn .nav-label{font-size:10px;color:var(--sub);font-weight:500;transition:color .2s;}
 .nav-btn.active svg{stroke:var(--primary);}
 .nav-btn.active .nav-label{color:var(--primary);}
-/* Бейдж уведомлений */
 .nav-badge{position:absolute;top:4px;right:10px;background:var(--accent);color:#fff;font-size:9px;font-weight:700;min-width:16px;height:16px;border-radius:50px;display:none;align-items:center;justify-content:center;padding:0 4px;}
 .nav-badge.show{display:flex;}
 
-/* ══════════════════════════════════════════
-   SEARCH BAR
-══════════════════════════════════════════ */
 .search-wrap{padding:8px 12px;background:var(--header-bg);border-bottom:1px solid var(--border);display:none;}
 .search-inp{width:100%;background:var(--input-bg);border:1.5px solid var(--border);color:var(--text);padding:10px 16px;border-radius:50px;font-size:14px;outline:none;}
 .search-inp:focus{border-color:var(--primary);}
 
-/* ══════════════════════════════════════════
-   STORIES
-══════════════════════════════════════════ */
 .stories-row{display:flex;gap:12px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none;}
 .s-item{display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;flex-shrink:0;}
 .s-ring{width:66px;height:66px;border-radius:50%;padding:2.5px;background:linear-gradient(135deg,var(--primary),var(--accent));}
@@ -135,7 +106,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .s-inner{width:100%;height:100%;border-radius:50%;background:var(--bg);overflow:hidden;}
 .s-inner img{width:100%;height:100%;object-fit:cover;}
 .s-name{font-size:10px;color:var(--sub);max-width:66px;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-/* Просмотр сторис */
 .story-viewer{display:none;position:fixed;inset:0;z-index:9000;background:#000;flex-direction:column;align-items:center;justify-content:center;}
 .story-viewer.open{display:flex;}
 .story-viewer img{max-width:100%;max-height:80vh;object-fit:contain;border-radius:16px;}
@@ -145,9 +115,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .s-close{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
 .s-author{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.6);backdrop-filter:blur(10px);padding:7px 16px;border-radius:50px;font-size:13px;color:#fff;white-space:nowrap;}
 
-/* ══════════════════════════════════════════
-   POSTS
-══════════════════════════════════════════ */
 .post-media-grid{display:grid;gap:3px;margin:10px -16px;}
 .post-media-grid.g1 img{width:100%;max-height:380px;object-fit:cover;}
 .post-media-grid.g2{grid-template-columns:1fr 1fr;}
@@ -165,9 +132,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .act-btn.liked svg{stroke:var(--accent);}
 .act-btn.bookmarked svg{fill:var(--primary);stroke:var(--primary);}
 
-/* ══════════════════════════════════════════
-   MEDIA PREVIEW (форма поста / сторис)
-══════════════════════════════════════════ */
 .media-preview-row{display:flex;gap:8px;overflow-x:auto;padding:6px 0;scrollbar-width:none;}
 .media-thumb{position:relative;flex-shrink:0;}
 .media-thumb img{width:72px;height:72px;border-radius:10px;object-fit:cover;border:2px solid var(--border);}
@@ -175,9 +139,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .media-add-btn{width:72px;height:72px;border-radius:10px;background:var(--input-bg);border:2px dashed var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;color:var(--sub);font-size:11px;gap:4px;flex-shrink:0;}
 .media-add-btn svg{width:20px;height:20px;stroke:var(--sub);fill:none;stroke-width:2;}
 
-/* ══════════════════════════════════════════
-   COMMENTS
-══════════════════════════════════════════ */
 .comments-wrap{border-top:1px solid var(--border);margin-top:12px;padding-top:12px;display:none;}
 .comments-wrap.open{display:block;}
 .cmt-item{display:flex;gap:8px;margin-bottom:10px;}
@@ -187,9 +148,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .cmt-inp{flex:1;background:var(--input-bg);border:1.5px solid var(--border);color:var(--text);padding:9px 14px;border-radius:50px;font-size:13px;outline:none;}
 .cmt-inp:focus{border-color:var(--primary);}
 
-/* ══════════════════════════════════════════
-   NOTIFICATIONS
-══════════════════════════════════════════ */
 .notif-item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);}
 .notif-item:last-child{border-bottom:none;}
 .notif-text{flex:1;font-size:13px;line-height:1.4;}
@@ -197,13 +155,10 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .notif-time{font-size:11px;color:var(--sub);white-space:nowrap;}
 .notif-dot{width:8px;height:8px;border-radius:50%;background:var(--primary);flex-shrink:0;}
 
-/* ══════════════════════════════════════════
-   PROFILE
-══════════════════════════════════════════ */
 .prof-cover{height:80px;background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 100%);position:relative;overflow:hidden;}
 .prof-cover-pattern{position:absolute;inset:0;opacity:.12;background:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 1px,transparent 12px);}
 .prof-body{background:var(--card);padding:0 18px 20px;}
-.prof-ava{width:82px;height:82px;border-radius:50%;border:4px solid var(--card);margin-top:01px;margin-bottom:10px;overflow:hidden;background:var(--bg);}
+.prof-ava{width:82px;height:82px;border-radius:50%;border:4px solid var(--card);margin-top:1px;margin-bottom:10px;overflow:hidden;background:var(--bg);}
 .prof-name{font-size:20px;font-weight:800;margin:0 0 2px;}
 .prof-bio{font-size:13px;color:var(--sub);margin:0 0 4px;}
 .prof-stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--border);border-radius:16px;overflow:hidden;margin:12px 0;}
@@ -211,7 +166,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .prof-stat-n{font-size:19px;font-weight:800;}
 .prof-stat-l{font-size:10px;color:var(--sub);margin-top:2px;}
 
-/* ── AURA (замена кармы) ─────────────────── */
 .aura-wrap{margin-bottom:14px;}
 .aura-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
 .aura-label{font-size:12px;color:var(--sub);}
@@ -219,26 +173,18 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .aura-bar-bg{background:var(--input-bg);border-radius:50px;height:10px;overflow:hidden;}
 .aura-bar-fill{height:100%;border-radius:50px;transition:width .7s cubic-bezier(.4,0,.2,1);}
 .aura-next{font-size:11px;color:var(--sub);text-align:right;margin-top:4px;}
-
-/* Уровни ауры с градиентами */
-.aura-0{background:linear-gradient(90deg,#94a3b8,#64748b);}       /* Тень */
-.aura-1{background:linear-gradient(90deg,#22d3ee,#0ea5e9);}       /* Искра */
-.aura-2{background:linear-gradient(90deg,#4ade80,#16a34a);}       /* Поток */
-.aura-3{background:linear-gradient(90deg,#a78bfa,#7c3aed);}       /* Волна */
-.aura-4{background:linear-gradient(90deg,#f59e0b,#ef4444);}       /* Пламя */
-.aura-5{background:linear-gradient(90deg,#ec4899,#8b5cf6,#06b6d4);} /* Призма */
-.aura-6{background:linear-gradient(90deg,#ffd700,#ff6b35,#e91e63,#9c27b0);background-size:300%;animation:aurora 3s linear infinite;} /* Аврора */
+.aura-0{background:linear-gradient(90deg,#94a3b8,#64748b);}
+.aura-1{background:linear-gradient(90deg,#22d3ee,#0ea5e9);}
+.aura-2{background:linear-gradient(90deg,#4ade80,#16a34a);}
+.aura-3{background:linear-gradient(90deg,#a78bfa,#7c3aed);}
+.aura-4{background:linear-gradient(90deg,#f59e0b,#ef4444);}
+.aura-5{background:linear-gradient(90deg,#ec4899,#8b5cf6,#06b6d4);}
+.aura-6{background:linear-gradient(90deg,#ffd700,#ff6b35,#e91e63,#9c27b0);background-size:300%;animation:aurora 3s linear infinite;}
 @keyframes aurora{0%{background-position:0%}100%{background-position:300%}}
-
 .aura-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:50px;font-size:13px;font-weight:700;color:#fff;margin-bottom:12px;}
-
-/* Значки */
 .badges-wrap{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;}
 .badge{background:var(--input-bg);border:1px solid var(--border);border-radius:50px;padding:5px 12px;font-size:12px;font-weight:500;display:flex;align-items:center;gap:5px;}
 
-/* ══════════════════════════════════════════
-   ДРУЗЬЯ / ПОДПИСКИ
-══════════════════════════════════════════ */
 .user-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
 .user-row:last-child{border-bottom:none;}
 .user-info{flex:1;}
@@ -246,16 +192,12 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .user-sub{font-size:12px;color:var(--sub);}
 .friends-tag{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,var(--green),#34d399);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:50px;margin-left:6px;}
 
-/* ══════════════════════════════════════════
-   ЛИЧНЫЙ ЧАТ
-══════════════════════════════════════════ */
 .dm-list-item{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;}
 .dm-list-item:last-child{border-bottom:none;}
 .dm-unread{width:8px;height:8px;border-radius:50%;background:var(--primary);flex-shrink:0;}
 .dm-last{font-size:12px;color:var(--sub);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:180px;}
 .dm-time{font-size:11px;color:var(--sub);margin-left:auto;}
 
-/* DM чат */
 #dm-chat-screen{display:none;position:fixed;inset:0;z-index:800;background:var(--bg);flex-direction:column;}
 #dm-chat-screen.open{display:flex;}
 .dm-header{background:var(--header-bg);backdrop-filter:blur(16px);padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);}
@@ -268,25 +210,16 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 .dm-inp{flex:1;background:var(--input-bg);border:1.5px solid var(--border);color:var(--text);padding:10px 14px;border-radius:50px;font-size:14px;outline:none;}
 .dm-inp:focus{border-color:var(--primary);}
 
-/* ══════════════════════════════════════════
-   PUBLIC CHAT
-══════════════════════════════════════════ */
 .chat-wrap{height:calc(100vh - 210px);overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding-bottom:8px;}
 .chat-bubble{padding:10px 14px;border-radius:18px;max-width:76%;font-size:14px;line-height:1.45;}
 .chat-bubble.me{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#fff;align-self:flex-end;border-bottom-right-radius:4px;}
 .chat-bubble.them{background:var(--card);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px;}
 .chat-input-bar{position:fixed;bottom:80px;width:100%;max-width:500px;padding:10px 12px;background:var(--header-bg);backdrop-filter:blur(16px);}
 
-/* ══════════════════════════════════════════
-   ДРУГОЙ ПРОФИЛЬ (страница просмотра)
-══════════════════════════════════════════ */
 #view-profile-screen{display:none;position:fixed;inset:0;z-index:700;background:var(--bg);overflow-y:auto;padding-bottom:80px;}
 #view-profile-screen.open{display:block;}
 .vp-header{background:var(--header-bg);backdrop-filter:blur(16px);padding:12px 16px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10;}
 
-/* ══════════════════════════════════════════
-   IMAGE MODAL
-══════════════════════════════════════════ */
 #img-modal{display:none;position:fixed;inset:0;z-index:9500;background:rgba(0,0,0,.9);align-items:center;justify-content:center;}
 #img-modal.open{display:flex;}
 #img-modal img{max-width:95vw;max-height:90vh;border-radius:12px;object-fit:contain;}
@@ -295,7 +228,6 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 </head>
 <body>
 
-<!-- ════ SPLASH ════ -->
 <div id="splash">
   <div class="splash-logo">PU<span>LSE</span></div>
   <div class="splash-tagline">Feel the Vibe ✦</div>
@@ -303,23 +235,19 @@ body{background:var(--bg);color:var(--text);margin:0;padding-bottom:80px;overflo
 </div>
 
 <script>
-// Скрываем splash через 1.8 сек — обычный скрипт, не модуль
 setTimeout(function(){
-  var s = document.getElementById('splash');
-  if(s) { s.style.opacity='0'; s.style.pointerEvents='none'; setTimeout(function(){ s.style.display='none'; }, 600); }
-}, 1800);
+  var s=document.getElementById('splash');
+  if(s){s.style.opacity='0';s.style.pointerEvents='none';setTimeout(function(){s.style.display='none';},600);}
+},1800);
 </script>
 
-<!-- ════ TOAST ════ -->
 <div id="toast"></div>
 
-<!-- ════ IMAGE MODAL ════ -->
 <div id="img-modal">
   <img id="img-modal-src" src="" alt="">
   <button id="img-modal-close" onclick="document.getElementById('img-modal').classList.remove('open')">✕</button>
 </div>
 
-<!-- ════ STORY VIEWER ════ -->
 <div class="story-viewer" id="story-viewer">
   <div class="s-bars" id="s-bars"></div>
   <img id="s-img" src="" alt="">
@@ -327,7 +255,6 @@ setTimeout(function(){
   <button class="s-close" onclick="closeStory()">✕</button>
 </div>
 
-<!-- ════ DM CHAT ════ -->
 <div id="dm-chat-screen">
   <div class="dm-header">
     <button class="dm-back" onclick="closeDM()">&#8592;</button>
@@ -346,7 +273,6 @@ setTimeout(function(){
   </div>
 </div>
 
-<!-- ════ VIEW PROFILE ════ -->
 <div id="view-profile-screen">
   <div class="vp-header">
     <button class="btn btn-ghost btn-sm" style="width:auto" onclick="closeViewProfile()">&#8592; Назад</button>
@@ -374,7 +300,6 @@ setTimeout(function(){
   </div>
 </div>
 
-<!-- ════ AUTH ════ -->
 <div id="auth-flow">
   <div id="login-screen" class="screen active">
     <div class="auth-wrap">
@@ -423,7 +348,6 @@ setTimeout(function(){
   </div>
 </div>
 
-<!-- ════ MAIN APP ════ -->
 <div id="app" style="display:none">
   <div class="header">
     <div class="header-logo">PULSE</div>
@@ -441,15 +365,11 @@ setTimeout(function(){
   </div>
 
   <div class="container">
-    <!-- FEED -->
     <div id="feed-screen" class="screen active">
       <div class="stories-row" id="stories-list"></div>
-      <!-- Форма поста -->
       <div class="card">
         <textarea id="post-text" placeholder="Поделись чем-нибудь..." rows="2" style="width:100%;background:none;border:none;color:var(--text);outline:none;font-size:15px;resize:none;font-family:inherit;margin-bottom:10px"></textarea>
-        <!-- Превью выбранных фото -->
         <div id="post-media-preview" class="media-preview-row" style="display:none"></div>
-        <!-- Кнопки медиа -->
         <div style="display:flex;gap:8px;margin-bottom:10px">
           <button class="btn btn-ghost btn-sm" style="width:auto;gap:6px" onclick="pickPostGallery()">
             <svg width="15" height="15" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -467,7 +387,6 @@ setTimeout(function(){
       <div id="posts-list"><div class="loader">Загрузка ленты...</div></div>
     </div>
 
-    <!-- CHAT -->
     <div id="chat-screen" class="screen">
       <div class="chat-wrap" id="chat-list"><div class="loader">Загрузка чата...</div></div>
       <div class="chat-input-bar">
@@ -480,7 +399,6 @@ setTimeout(function(){
       </div>
     </div>
 
-    <!-- NOTIFICATIONS -->
     <div id="notif-screen" class="screen">
       <div class="card">
         <div style="font-weight:700;font-size:16px;margin-bottom:12px">Уведомления</div>
@@ -488,12 +406,10 @@ setTimeout(function(){
       </div>
     </div>
 
-    <!-- BOOKMARKS -->
     <div id="bm-screen" class="screen">
       <div id="bm-list"><div class="loader">Загрузка...</div></div>
     </div>
 
-    <!-- PROFILE -->
     <div id="profile-screen" class="screen">
       <div class="card" style="padding:0;overflow:hidden;margin-bottom:14px">
         <div class="prof-cover"><div class="prof-cover-pattern"></div></div>
@@ -507,7 +423,6 @@ setTimeout(function(){
             <div class="prof-stat"><div class="prof-stat-n" id="my-aura">—</div><div class="prof-stat-l">Аура</div></div>
             <div class="prof-stat"><div class="prof-stat-n" id="my-followers">—</div><div class="prof-stat-l">Подписчики</div></div>
           </div>
-          <!-- AURA BAR -->
           <div class="aura-wrap">
             <div class="aura-header">
               <span class="aura-label">Уровень ауры</span>
@@ -529,7 +444,6 @@ setTimeout(function(){
     </div>
   </div>
 
-  <!-- BOTTOM NAV -->
   <nav class="nav">
     <div class="nav-btn active" id="nb-feed" onclick="goScreen('feed-screen','nb-feed')">
       <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -555,13 +469,11 @@ setTimeout(function(){
   </nav>
 </div>
 
-<!-- ════ СКРЫТЫЕ INPUT'Ы ════ -->
 <input type="file" id="story-gallery" accept="image/*" style="display:none" onchange="handleStoryMedia(this,false)">
 <input type="file" id="story-camera" accept="image/*" capture="environment" style="display:none" onchange="handleStoryMedia(this,true)">
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
 import {
   getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
   signOut, onAuthStateChanged, updateProfile
@@ -569,84 +481,78 @@ import {
 import {
   getFirestore, collection, addDoc, getDocs, doc, getDoc, setDoc, updateDoc,
   onSnapshot, query, orderBy, where, serverTimestamp,
-  arrayUnion, arrayRemove, increment
+  arrayUnion, arrayRemove, increment, writeBatch
 } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 
-// ── Firebase config ──────────────────────
 const cfg = {
   apiKey:"AIzaSyBIBIqUG6teocesSg4CfWjQzmDdo7lS3wM",
   authDomain:"skyline-68346.firebaseapp.com",
   projectId:"skyline-68346",
   storageBucket:"skyline-68346.firebasestorage.app",
   messagingSenderId:"494385934290",
-  appId:"1:494385934290:web:45763076e3d97f3625e20b",
-  measurementId:"G-WS71XBQKRY"
+  appId:"1:494385934290:web:45763076e3d97f3625e20b"
 };
 const app  = initializeApp(cfg);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db   = getFirestore(app);
 
 // ── State ────────────────────────────────
-let me = null;        // Firebase Auth user
-let myProf = null;    // Firestore profile doc
-let chatUnsub = null; // public chat listener
-let allPosts = [];    // cache for search
-let postMediaB64 = [];// base64 images for new post
-let regAvaB64 = '';   // base64 avatar for registration
-let vpUserId = null;  // currently viewed profile uid
-let dmUserId = null;  // current DM peer uid
-let dmUnsub = null;   // DM listener
-let notifCount = 0;   // unread notification count
+let me = null;
+let myProf = null;
+let chatUnsub = null;
+let allPosts = [];
+let postMediaB64 = [];
+let regAvaB64 = '';
+let vpUserId = null;
+let dmUserId = null;
+let dmUnsub = null;
+let notifCount = 0;
 
-// ── Color palette for avatars ────────────
 const AVA_COLORS = ['#6c63ff','#f43f5e','#10b981','#f59e0b','#3b82f6','#8b5cf6','#ec4899'];
 
-// ════════════════════════════════════════════════
-// HELPERS
-// ════════════════════════════════════════════════
-
-/** Generate avatar HTML — photo or colored letter */
-function ava(name, b64, size=40) {
-  if (b64 && b64.startsWith('data:'))
-    return `<img src="${b64}" class="ava" style="width:${size}px;height:${size}px">`;
-  const c = AVA_COLORS[Math.abs((name||'').length) % AVA_COLORS.length];
-  const fs = Math.round(size * .38);
-  return `<div class="ava" style="width:${size}px;height:${size}px;font-size:${fs}px;background:${c}">${(name||'?')[0].toUpperCase()}</div>`;
+// ── XSS-safe escape ──────────────────────
+function esc(s) {
+  return String(s||'')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#39;');
 }
 
-/** Toast notification */
+function ava(name, b64, size=40) {
+  if (b64 && b64.startsWith('data:'))
+    return `<img src="${esc(b64)}" class="ava" style="width:${size}px;height:${size}px">`;
+  const c = AVA_COLORS[Math.abs((name||'').length) % AVA_COLORS.length];
+  const fs = Math.round(size * .38);
+  return `<div class="ava" style="width:${size}px;height:${size}px;font-size:${fs}px;background:${c}">${esc((name||'?')[0].toUpperCase())}</div>`;
+}
+
 function toast(msg) {
   const el = document.getElementById('toast');
   el.textContent = msg; el.classList.add('show');
   clearTimeout(el._t); el._t = setTimeout(()=>el.classList.remove('show'),3200);
 }
 
-/** Read File as base64 */
 function fileToB64(file) {
   return new Promise(res=>{const r=new FileReader();r.onload=e=>res(e.target.result);r.readAsDataURL(file);});
 }
 
-/** Show/hide error */
 function showErr(id, msg) {
   const el=document.getElementById(id);
   if(!el)return; el.textContent=msg; el.style.display=msg?'block':'none';
 }
 
-/** Disable/enable button */
 function setBtn(id,v){const b=document.getElementById(id);if(b)b.disabled=v;}
 
-/** Format timestamp */
 function fmtTime(ts) {
-  if(!ts?.toDate) return '';
+  if(!ts?.toDate) return 'только что';
   const d=ts.toDate();
   return d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
 }
 
-// Splash скрывается через inline скрипт выше
-
 // ════════════════════════════════════════════════
-// AUTH SCREENS
+// AUTH
 // ════════════════════════════════════════════════
 window.showAuth = id => {
   document.querySelectorAll('#auth-flow .screen').forEach(s=>s.classList.remove('active'));
@@ -654,13 +560,12 @@ window.showAuth = id => {
   showErr('l-err',''); showErr('r-err','');
 };
 
-// ── Registration avatar helpers ───────────
 window.pickRegAvatar = ()=>document.getElementById('reg-ava-file').click();
 window.pickRegCamera = ()=>document.getElementById('reg-ava-cam').click();
 window.handleRegAva = async el=>{
-  const f = el.files[0]; if(!f)return;
-  regAvaB64 = await fileToB64(f);
-  document.getElementById('reg-ava-img').src = regAvaB64;
+  const f=el.files[0]; if(!f)return;
+  regAvaB64=await fileToB64(f);
+  document.getElementById('reg-ava-img').src=regAvaB64;
   document.getElementById('reg-ava-img-wrap').style.display='block';
   el.value='';
 };
@@ -669,23 +574,21 @@ window.clearRegAvatar = ()=>{
   document.getElementById('reg-ava-img-wrap').style.display='none';
 };
 
-// ── Login ─────────────────────────────────
 window.handleLogin = async ()=>{
   const email=document.getElementById('l-email').value.trim();
-  const pass =document.getElementById('l-pass').value;
+  const pass=document.getElementById('l-pass').value;
   showErr('l-err','');
   if(!email||!pass){showErr('l-err','Введите email и пароль');return;}
   setBtn('l-btn',true);
   try{await signInWithEmailAndPassword(auth,email,pass);}
-  catch(e){showErr('l-err', e.code==='auth/invalid-credential'?'Неверный email или пароль':e.message);}
+  catch(e){showErr('l-err',e.code==='auth/invalid-credential'?'Неверный email или пароль':e.message);}
   setBtn('l-btn',false);
 };
 
-// ── Registration ──────────────────────────
 window.handleReg = async ()=>{
   const name=document.getElementById('r-name').value.trim();
   const email=document.getElementById('r-email').value.trim();
-  const pass =document.getElementById('r-pass').value;
+  const pass=document.getElementById('r-pass').value;
   showErr('r-err','');
   if(!name){showErr('r-err','Введи имя');return;}
   if(!email){showErr('r-err','Введи email');return;}
@@ -698,7 +601,7 @@ window.handleReg = async ()=>{
       name,email,avatar:regAvaB64||'',bio:'',aura:0,
       followers:[],following:[],bookmarks:[],createdAt:serverTimestamp()
     });
-  }catch(e){showErr('r-err', e.code==='auth/email-already-in-use'?'Email уже занят':e.message);}
+  }catch(e){showErr('r-err',e.code==='auth/email-already-in-use'?'Email уже занят':e.message);}
   setBtn('r-btn',false);
 };
 
@@ -727,15 +630,11 @@ onAuthStateChanged(auth, async fbUser=>{
   }
 });
 
-// ════════════════════════════════════════════════
-// PROFILE LOADING
-// ════════════════════════════════════════════════
 async function loadMyProfile(){
   const ref=doc(db,'users',me.uid);
   const snap=await getDoc(ref);
   if(snap.exists()){myProf=snap.data();}
   else{
-    // Создаём профиль если не существует (старый пользователь)
     myProf={name:me.displayName||me.email.split('@')[0],email:me.email,
       avatar:'',bio:'',aura:0,followers:[],following:[],bookmarks:[],createdAt:serverTimestamp()};
     await setDoc(ref,myProf);
@@ -745,7 +644,7 @@ async function loadMyProfile(){
 // ════════════════════════════════════════════════
 // NAVIGATION
 // ════════════════════════════════════════════════
-window.goScreen = (scrId, navId)=>{
+window.goScreen = (scrId,navId)=>{
   document.querySelectorAll('#app .screen').forEach(s=>s.classList.remove('active'));
   document.getElementById(scrId).classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
@@ -754,7 +653,6 @@ window.goScreen = (scrId, navId)=>{
   if(scrId==='chat-screen')    startPubChat();
   if(scrId==='bm-screen')      renderBookmarks();
   if(scrId==='notif-screen'){  renderNotifs(); clearNotifBadge(); }
-  // Скрыть поиск
   document.getElementById('search-wrap').style.display='none';
 };
 
@@ -768,7 +666,7 @@ window.toggleSearch=()=>{
   if(!vis)document.getElementById('search-inp').focus();
 };
 
-window.doSearch=async q=>{
+window.doSearch=q=>{
   q=q.trim().toLowerCase();
   if(!q){renderPostsList(allPosts);return;}
   const filtered=allPosts.filter(p=>
@@ -779,12 +677,11 @@ window.doSearch=async q=>{
 };
 
 // ════════════════════════════════════════════════
-// MEDIA HELPERS (base64, galleries)
+// MEDIA
 // ════════════════════════════════════════════════
 window.pickPostGallery=()=>document.getElementById('post-gallery-file').click();
-window.pickPostCamera =()=>document.getElementById('post-camera-file').click();
+window.pickPostCamera=()=>document.getElementById('post-camera-file').click();
 
-/** Handle multiple files for post */
 window.handlePostMedia=async el=>{
   for(const f of Array.from(el.files)){
     if(postMediaB64.length>=4){toast('Максимум 4 фото');break;}
@@ -800,7 +697,7 @@ function renderPostMediaPreview(){
   wrap.style.display='flex';
   wrap.innerHTML=postMediaB64.map((b,i)=>`
     <div class="media-thumb">
-      <img src="${b}" onclick="openImgModal('${b}')">
+      <img src="${esc(b)}" onclick="openImgModal(${i})">
       <div class="rm" onclick="removePostMedia(${i})">✕</div>
     </div>`).join('')+
     (postMediaB64.length<4?`<div class="media-add-btn" onclick="pickPostGallery()">
@@ -810,37 +707,35 @@ function renderPostMediaPreview(){
 
 window.removePostMedia=idx=>{postMediaB64.splice(idx,1);renderPostMediaPreview();};
 
-/** Open fullscreen image */
-window.openImgModal=src=>{
-  document.getElementById('img-modal-src').src=src;
+// Хранит base64 текущего открытого изображения
+let _modalImages = [];
+window.openImgModal=(src)=>{
+  // src может быть строкой (url) или индексом в массиве postMediaB64
+  const url = typeof src === 'number' ? postMediaB64[src] : src;
+  if(!url)return;
+  document.getElementById('img-modal-src').src=url;
   document.getElementById('img-modal').classList.add('open');
 };
 
-// Story media
 window.addStoryPrompt=()=>{
-  // Показываем выбор: галерея или камера
-  const sheet = document.createElement('div');
+  const sheet=document.createElement('div');
   sheet.style.cssText='position:fixed;inset:0;z-index:8000;display:flex;align-items:flex-end;background:rgba(0,0,0,.5)';
   sheet.innerHTML=`<div style="background:var(--card);border-radius:24px 24px 0 0;padding:20px;width:100%;max-width:500px;margin:0 auto">
     <div style="text-align:center;font-weight:700;margin-bottom:16px">Добавить сторис</div>
-    <button class="btn btn-ghost" style="margin-bottom:10px" onclick="document.getElementById('story-gallery').click();this.closest('div').parentElement.remove()">
-      Из галереи
-    </button>
-    <button class="btn btn-ghost" style="margin-bottom:10px" onclick="document.getElementById('story-camera').click();this.closest('div').parentElement.remove()">
-      Камера
-    </button>
+    <button class="btn btn-ghost" style="margin-bottom:10px" onclick="document.getElementById('story-gallery').click();this.closest('div').parentElement.remove()">Из галереи</button>
+    <button class="btn btn-ghost" style="margin-bottom:10px" onclick="document.getElementById('story-camera').click();this.closest('div').parentElement.remove()">Камера</button>
     <button class="btn btn-ghost" onclick="this.closest('div').parentElement.remove()">Отмена</button>
   </div>`;
   document.body.appendChild(sheet);
 };
 
-window.handleStoryMedia=async(el, fromCamera)=>{
+window.handleStoryMedia=async(el)=>{
   const f=el.files[0]; if(!f)return;
   const b64=await fileToB64(f);
   el.value='';
   try{
     await addDoc(collection(db,'stories'),{
-      url:b64, authorId:me.uid,
+      url:b64,authorId:me.uid,
       author:myProf?.name||'Аноним',
       createdAt:serverTimestamp()
     });
@@ -849,7 +744,6 @@ window.handleStoryMedia=async(el, fromCamera)=>{
   }catch(e){toast('Ошибка: '+e.message);}
 };
 
-/** Avatar pick for profile */
 window.editAva=()=>{
   const sheet=document.createElement('div');
   sheet.style.cssText='position:fixed;inset:0;z-index:8000;display:flex;align-items:flex-end;background:rgba(0,0,0,.5)';
@@ -882,14 +776,12 @@ let storyData=[], storyIdx=0, storyTimer=null;
 async function startStories(){
   const s=document.getElementById('stories-list');
   s.innerHTML='';
-  // Кнопка добавления
   const addEl=document.createElement('div');
   addEl.className='s-item';
   addEl.innerHTML=`<div class="s-ring add" onclick="addStoryPrompt()">
     <svg width="24" height="24" viewBox="0 0 24 24" stroke="var(--sub)" stroke-width="2" fill="none"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
   </div><span class="s-name">Добавить</span>`;
   s.appendChild(addEl);
-
   const snap=await getDocs(query(collection(db,'stories'),orderBy('createdAt','desc')));
   storyData=[];
   snap.forEach(d=>storyData.push({id:d.id,...d.data()}));
@@ -897,8 +789,8 @@ async function startStories(){
     const div=document.createElement('div');
     div.className='s-item';
     div.innerHTML=`<div class="s-ring" onclick="openStory(${i})">
-      <div class="s-inner"><img src="${st.url}" onerror="this.style.display='none'"></div>
-    </div><span class="s-name">${st.author||'?'}</span>`;
+      <div class="s-inner"><img src="${esc(st.url)}" onerror="this.style.display='none'"></div>
+    </div><span class="s-name">${esc(st.author||'?')}</span>`;
     s.appendChild(div);
   });
 }
@@ -918,7 +810,7 @@ function showStoryAt(idx){
   clearTimeout(storyTimer);
   const st=storyData[idx]; if(!st){closeStory();return;}
   document.getElementById('s-img').src=st.url;
-  document.getElementById('s-author').textContent='✦ '+( st.author||'Аноним');
+  document.getElementById('s-author').textContent='✦ '+(st.author||'Аноним');
   const bars=document.getElementById('s-bars');
   bars.innerHTML=storyData.map((_,i)=>`<div class="s-bar"><div class="s-bar-fill" id="sb-${i}"></div></div>`).join('');
   for(let i=0;i<idx;i++){const b=document.getElementById('sb-'+i);if(b)b.style.width='100%';}
@@ -952,50 +844,70 @@ function renderPostsList(posts){
   posts.forEach(p=>list.appendChild(makePostCard(p)));
 }
 
-function makePostCard(p, compact=false){
-  const isLiked = me&&(p.likedBy||[]).includes(me.uid);
-  const isBm    = me&&(p.bookmarkedBy||[]).includes(me.uid);
-  const time    = fmtTime(p.createdAt);
+function makePostCard(p){
+  const isLiked=me&&(p.likedBy||[]).includes(me.uid);
+  const isBm=me&&(p.bookmarkedBy||[]).includes(me.uid);
+  const time=fmtTime(p.createdAt);
 
-  // Медиа-сетка
+  // Медиа-сетка — храним урлы в data-атрибуте, клик через JS
   let mediaHtml='';
   if(p.images&&p.images.length){
     const cls=['','g1','g2','g3','g4'][Math.min(p.images.length,4)];
-    mediaHtml=`<div class="post-media-grid ${cls}">${p.images.slice(0,4).map(u=>`<img src="${u}" onclick="openImgModal('${u}')" style="cursor:pointer" onerror="this.style.display='none'">`).join('')}</div>`;
+    mediaHtml=`<div class="post-media-grid ${cls}">${
+      p.images.slice(0,4).map((u,idx)=>
+        `<img src="${esc(u)}" data-img-idx="${idx}" data-post-id="${esc(p.id)}" style="cursor:pointer" onerror="this.style.display='none'">`
+      ).join('')
+    }</div>`;
   }
 
   const card=document.createElement('div');
   card.className='card';
   card.innerHTML=`
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-      <div style="cursor:pointer" onclick="openViewProfile('${p.authorId}')">${ava(p.author,p.authorAva,40)}</div>
+      <div style="cursor:pointer" data-open-profile="${esc(p.authorId||'')}">${ava(p.author,p.authorAva,40)}</div>
       <div style="flex:1">
-        <div style="font-weight:700;font-size:14px;cursor:pointer" onclick="openViewProfile('${p.authorId}')">${p.author||'Аноним'}</div>
+        <div style="font-weight:700;font-size:14px;cursor:pointer" data-open-profile="${esc(p.authorId||'')}">${esc(p.author||'Аноним')}</div>
         <div style="font-size:11px;color:var(--sub)">${time}</div>
       </div>
     </div>
-    ${p.text?`<div style="font-size:15px;line-height:1.55;margin-bottom:4px">${p.text}</div>`:''}
+    ${p.text?`<div style="font-size:15px;line-height:1.55;margin-bottom:4px">${esc(p.text)}</div>`:''}
     ${mediaHtml}
     <div class="post-actions">
-      <button class="act-btn ${isLiked?'liked':''}" data-like="${p.id}">
+      <button class="act-btn ${isLiked?'liked':''}" data-like="${esc(p.id)}">
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         ${p.likes||0}
       </button>
-      <button class="act-btn" data-comments="${p.id}">
+      <button class="act-btn" data-comments="${esc(p.id)}">
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         ${p.commentCount||0}
       </button>
-      <button class="act-btn ${isBm?'bookmarked':''}" data-bm="${p.id}" style="margin-left:auto">
+      <button class="act-btn ${isBm?'bookmarked':''}" data-bm="${esc(p.id)}" style="margin-left:auto">
         <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
       </button>
     </div>
-    <div class="comments-wrap" id="cmts-${p.id}">
-      <div id="cmts-list-${p.id}" style="margin-bottom:8px"></div>
+    <div class="comments-wrap" id="cmts-${esc(p.id)}">
+      <div id="cmts-list-${esc(p.id)}" style="margin-bottom:8px"></div>
       <div class="cmt-row">
-        <input class="cmt-inp" id="cmt-inp-${p.id}" placeholder="Комментарий...">
-        <button class="btn btn-primary btn-sm" style="width:auto;padding:8px 14px" data-send-cmt="${p.id}">↑</button>
+        <input class="cmt-inp" id="cmt-inp-${esc(p.id)}" placeholder="Комментарий...">
+        <button class="btn btn-primary btn-sm" style="width:auto;padding:8px 14px" data-send-cmt="${esc(p.id)}">↑</button>
       </div>
     </div>`;
+
+  // Открытие профиля через data-атрибут — БЕЗ inline onclick
+  card.querySelectorAll('[data-open-profile]').forEach(el=>{
+    el.addEventListener('click',()=>{
+      const uid=el.getAttribute('data-open-profile');
+      if(uid) openViewProfile(uid);
+    });
+  });
+
+  // Клик по картинке поста
+  card.querySelectorAll('[data-img-idx]').forEach(img=>{
+    img.addEventListener('click',()=>{
+      const src=img.getAttribute('src');
+      if(src) window.openImgModal(src);
+    });
+  });
 
   card.querySelector(`[data-like]`)?.addEventListener('click',()=>toggleLike(p.id,isLiked));
   card.querySelector(`[data-comments]`)?.addEventListener('click',()=>toggleComments(p.id));
@@ -1015,8 +927,8 @@ window.addPost=async()=>{
       author:myProf?.name||'Аноним',
       authorAva:myProf?.avatar||'',
       authorId:me.uid,
-      text:t, images:postMediaB64,
-      likes:0, likedBy:[], bookmarkedBy:[], commentCount:0,
+      text:t,images:postMediaB64,
+      likes:0,likedBy:[],bookmarkedBy:[],commentCount:0,
       createdAt:serverTimestamp()
     });
     await updateDoc(doc(db,'users',me.uid),{aura:increment(5)});
@@ -1025,41 +937,40 @@ window.addPost=async()=>{
     postMediaB64=[];
     renderPostMediaPreview();
     toast('Опубликовано! +5 ауры ✦');
-    // Добавляем уведомления подписчикам
+    // Уведомления подписчикам через Promise.all — не блокируем UI
     const followers=myProf.followers||[];
-    for(const fid of followers){
-      await addDoc(collection(db,'notifs'),{
-        toUid:fid, fromUid:me.uid, fromName:myProf.name,
-        fromAva:myProf.avatar||'', type:'post',
+    if(followers.length){
+      await Promise.all(followers.map(fid=>addDoc(collection(db,'notifs'),{
+        toUid:fid,fromUid:me.uid,fromName:myProf.name,
+        fromAva:myProf.avatar||'',type:'post',
         text:`${myProf.name} опубликовал новый пост`,
-        read:false, createdAt:serverTimestamp()
-      });
+        read:false,createdAt:serverTimestamp()
+      })));
     }
   }catch(e){toast('Ошибка: '+e.message);}
   setBtn('post-btn',false);
 };
 
-async function toggleLike(postId, isLiked){
+async function toggleLike(postId,isLiked){
   if(!me)return;
   const ref=doc(db,'posts',postId);
   if(isLiked){
     await updateDoc(ref,{likes:increment(-1),likedBy:arrayRemove(me.uid)});
   }else{
     await updateDoc(ref,{likes:increment(1),likedBy:arrayUnion(me.uid)});
-    // Уведомление автору поста
     const psnap=await getDoc(ref);
     if(psnap.exists()&&psnap.data().authorId!==me.uid){
       await addDoc(collection(db,'notifs'),{
-        toUid:psnap.data().authorId, fromUid:me.uid,
-        fromName:myProf.name, fromAva:myProf.avatar||'',
-        type:'like', text:`${myProf.name} лайкнул твой пост`,
-        read:false, createdAt:serverTimestamp()
+        toUid:psnap.data().authorId,fromUid:me.uid,
+        fromName:myProf.name,fromAva:myProf.avatar||'',
+        type:'like',text:`${myProf.name} лайкнул твой пост`,
+        read:false,createdAt:serverTimestamp()
       });
     }
   }
 }
 
-async function toggleBm(postId, isBm){
+async function toggleBm(postId,isBm){
   if(!me)return;
   const pr=doc(db,'posts',postId);
   const ur=doc(db,'users',me.uid);
@@ -1096,7 +1007,7 @@ async function loadCmts(postId){
     const c=d.data();
     const div=document.createElement('div');
     div.className='cmt-item';
-    div.innerHTML=`${ava(c.author,c.authorAva,28)}<div class="cmt-bubble"><div class="cmt-author">${c.author||'?'}</div>${c.text}</div>`;
+    div.innerHTML=`${ava(c.author,c.authorAva,28)}<div class="cmt-bubble"><div class="cmt-author">${esc(c.author||'?')}</div>${esc(c.text)}</div>`;
     el.appendChild(div);
   });
 }
@@ -1138,7 +1049,8 @@ async function renderBookmarks(){
 // PUBLIC CHAT
 // ════════════════════════════════════════════════
 function startPubChat(){
-  if(chatUnsub)return;
+  // Если уже слушаем — отписываемся и создаём заново (на случай смены юзера)
+  if(chatUnsub){chatUnsub();chatUnsub=null;}
   const q=query(collection(db,'messages'),orderBy('createdAt','asc'));
   chatUnsub=onSnapshot(q,snap=>{
     const list=document.getElementById('chat-list');
@@ -1148,7 +1060,13 @@ function startPubChat(){
       const m=d.data(); const isMe=me&&m.authorId===me.uid;
       const div=document.createElement('div');
       div.className='chat-bubble '+(isMe?'me':'them');
-      div.innerHTML='<div style="opacity:.6;font-size:10px;margin-bottom:2px">'+m.author+'</div>'+m.text;
+      // textContent безопасен от XSS
+      const label=document.createElement('div');
+      label.style.cssText='opacity:.6;font-size:10px;margin-bottom:2px';
+      label.textContent=m.author||'?';
+      const body=document.createElement('div');
+      body.textContent=m.text||'';
+      div.appendChild(label); div.appendChild(body);
       list.appendChild(div);
     });
     list.scrollTop=list.scrollHeight;
@@ -1189,10 +1107,15 @@ async function renderNotifs(){
     const n=d.data();
     const div=document.createElement('div');
     div.className='notif-item';
-    div.innerHTML=(n.read?'<div style="width:8px"></div>':'<div class="notif-dot"></div>')+
-      ava(n.fromName,n.fromAva,38)+
-      '<div class="notif-text">'+n.text+'</div>'+
-      '<div class="notif-time">'+fmtTime(n.createdAt)+'</div>';
+    const dotHtml=n.read?'<div style="width:8px"></div>':'<div class="notif-dot"></div>';
+    div.innerHTML=dotHtml+ava(n.fromName,n.fromAva,38);
+    const txt=document.createElement('div');
+    txt.className='notif-text';
+    txt.textContent=n.text||'';
+    const time=document.createElement('div');
+    time.className='notif-time';
+    time.textContent=fmtTime(n.createdAt);
+    div.appendChild(txt); div.appendChild(time);
     list.appendChild(div);
     if(!n.read)updateDoc(doc(db,'notifs',d.id),{read:true});
   });
@@ -1206,13 +1129,13 @@ function clearNotifBadge(){
 // MY PROFILE
 // ════════════════════════════════════════════════
 const AURA_LEVELS=[
-  {name:'☁️ Тень',      max:30,   cls:'aura-0', desc:'Твоя аура ещё не проснулась...'},
-  {name:'⚡ Искра',     max:100,  cls:'aura-1', desc:'Что-то зажглось внутри тебя'},
-  {name:'🌊 Поток',     max:250,  cls:'aura-2', desc:'Ты в потоке — и это чувствуется'},
-  {name:'🔮 Волна',     max:500,  cls:'aura-3', desc:'Волна идёт от тебя. Люди чувствуют'},
-  {name:'🔥 Пламя',     max:1000, cls:'aura-4', desc:'Ты горишь. Никто не останется равнодушным'},
-  {name:'💠 Призма',    max:2500, cls:'aura-5', desc:'Ты преломляешь свет по-своему'},
-  {name:'🌌 Аврора',    max:Infinity, cls:'aura-6', desc:'Легенда. Тебя чувствуют даже не видя'},
+  {name:'☁️ Тень',   max:30,       cls:'aura-0',desc:'Твоя аура ещё не проснулась...'},
+  {name:'⚡ Искра',  max:100,      cls:'aura-1',desc:'Что-то зажглось внутри тебя'},
+  {name:'🌊 Поток',  max:250,      cls:'aura-2',desc:'Ты в потоке — и это чувствуется'},
+  {name:'🔮 Волна',  max:500,      cls:'aura-3',desc:'Волна идёт от тебя. Люди чувствуют'},
+  {name:'🔥 Пламя',  max:1000,     cls:'aura-4',desc:'Ты горишь. Никто не останется равнодушным'},
+  {name:'💠 Призма', max:2500,     cls:'aura-5',desc:'Ты преломляешь свет по-своему'},
+  {name:'🌌 Аврора', max:Infinity, cls:'aura-6',desc:'Легенда. Тебя чувствуют даже не видя'},
 ];
 
 async function renderMyProfile(){
@@ -1239,15 +1162,19 @@ async function renderMyProfile(){
   if((myProf.followers||[]).length>=5)badges.push('👥 Инфлюенсер');
   if((myProf.aura||0)>=500)badges.push('🌊 Легенда ауры');
   document.getElementById('my-badges').innerHTML=badges.length
-    ?badges.map(b=>'<div class="badge">'+b+'</div>').join('')
+    ?badges.map(b=>'<div class="badge">'+esc(b)+'</div>').join('')
     :'<div class="badge">✦ Начни публиковать посты</div>';
 }
 
 function renderAuraBar(aura){
-  const lvlIdx=AURA_LEVELS.findIndex(l=>aura<l.max);
-  const level=lvlIdx===-1?AURA_LEVELS[AURA_LEVELS.length-1]:AURA_LEVELS[lvlIdx];
-  const prev=lvlIdx>0?AURA_LEVELS[lvlIdx-1].max:0;
-  const pct=level.max===Infinity?100:Math.min(100,Math.round((aura-prev)/(level.max-prev)*100));
+  // ФИКС: правильный расчёт уровня и прогресса
+  let lvlIdx=AURA_LEVELS.findIndex(l=>aura<l.max);
+  if(lvlIdx===-1) lvlIdx=AURA_LEVELS.length-1; // максимальный уровень
+  const level=AURA_LEVELS[lvlIdx];
+  const prevMax=lvlIdx>0?AURA_LEVELS[lvlIdx-1].max:0;
+  const pct=level.max===Infinity
+    ?100
+    :Math.min(100,Math.round((aura-prevMax)/(level.max-prevMax)*100));
   const next=lvlIdx<AURA_LEVELS.length-1?AURA_LEVELS[lvlIdx+1]:null;
   document.getElementById('aura-level-name').textContent=level.name;
   const bar=document.getElementById('aura-bar');
@@ -1255,10 +1182,9 @@ function renderAuraBar(aura){
   bar.style.width=pct+'%';
   document.getElementById('aura-next').textContent=
     level.max===Infinity?'Максимальный уровень — ты легенда 🌌':
-    aura+' / '+level.max+' • До «'+(next?.name||'')+'» осталось '+(level.max-aura)+' ауры';
+    `${aura} / ${level.max} • До «${next?.name||''}» осталось ${level.max-aura} ауры`;
   const bw=document.getElementById('aura-badge-wrap');
-  bw.innerHTML='<div class="aura-badge '+level.cls+'" style="font-size:13px">'+
-    level.name+' <span style="opacity:.7;font-weight:400;font-size:12px">— '+level.desc+'</span></div>';
+  bw.innerHTML=`<div class="aura-badge ${level.cls}">${esc(level.name)} <span style="opacity:.7;font-weight:400;font-size:12px">— ${esc(level.desc)}</span></div>`;
 }
 
 window.editBio=async()=>{
@@ -1271,20 +1197,29 @@ window.editBio=async()=>{
 };
 
 // ════════════════════════════════════════════════
-// VIEW OTHER PROFILE
+// VIEW OTHER PROFILE  ← ГЛАВНЫЙ ФИКС
 // ════════════════════════════════════════════════
 window.openViewProfile=async uid=>{
+  // Защита от пустого uid
+  if(!uid){toast('Профиль недоступен');return;}
+  // Если это я — открываем свой профиль
   if(uid===me?.uid){goScreen('profile-screen','nb-profile');return;}
+
   vpUserId=uid;
-  const snap=await getDoc(doc(db,'users',uid));
-  if(!snap.exists()){toast('Профиль не найден');return;}
-  const prof=snap.data();
-  document.getElementById('vp-title').textContent=prof.name;
+  let prof;
+  try{
+    const snap=await getDoc(doc(db,'users',uid));
+    if(!snap.exists()){toast('Профиль не найден');vpUserId=null;return;}
+    prof=snap.data();
+  }catch(e){toast('Ошибка загрузки профиля');vpUserId=null;return;}
+
+  document.getElementById('vp-title').textContent=prof.name||'Профиль';
   document.getElementById('vp-ava').innerHTML=ava(prof.name,prof.avatar,82);
-  document.getElementById('vp-name').textContent=prof.name;
+  document.getElementById('vp-name').textContent=prof.name||'';
   document.getElementById('vp-bio').textContent=prof.bio||'';
   document.getElementById('vp-followers').textContent=(prof.followers||[]).length;
   document.getElementById('vp-aura').textContent=prof.aura||0;
+
   const psnap=await getDocs(query(collection(db,'posts'),where('authorId','==',uid),orderBy('createdAt','desc')));
   document.getElementById('vp-posts').textContent=psnap.size;
   const pl=document.getElementById('vp-posts-list');
@@ -1328,7 +1263,7 @@ window.toggleFollowView=async()=>{
     toast('Подписался! ✦');
   }
   const snap=await getDoc(doc(db,'users',vpUserId));
-  updateVPFollowBtn(vpUserId,snap.data());
+  if(snap.exists()) updateVPFollowBtn(vpUserId,snap.data());
 };
 
 window.closeViewProfile=()=>{
@@ -1337,14 +1272,14 @@ window.closeViewProfile=()=>{
 };
 
 // ════════════════════════════════════════════════
-// DM — личные сообщения
+// DM
 // ════════════════════════════════════════════════
 function dmId(a,b){return [a,b].sort().join('_');}
 
 async function openDM(uid,prof){
   dmUserId=uid;
   if(dmUnsub){dmUnsub();dmUnsub=null;}
-  document.getElementById('dm-title').textContent=prof.name;
+  document.getElementById('dm-title').textContent=prof.name||'';
   document.getElementById('dm-ava-wrap').innerHTML=ava(prof.name,prof.avatar,36);
   const snap=await getDoc(doc(db,'users',uid));
   const amI=(myProf?.following||[]).includes(uid);
@@ -1360,7 +1295,7 @@ async function openDM(uid,prof){
       const m=d.data(); const isMe2=me&&m.senderUid===me.uid;
       const div=document.createElement('div');
       div.className='dm-bubble '+(isMe2?'me':'them');
-      div.textContent=m.text;
+      div.textContent=m.text||'';
       list.appendChild(div);
     });
     list.scrollTop=list.scrollHeight;
@@ -1384,6 +1319,8 @@ window.closeDM=()=>{
 
 window.sendDM=async()=>{
   if(!me||!dmUserId)return;
+  // Не отправляем уведомление самому себе
+  if(dmUserId===me.uid)return;
   const inp=document.getElementById('dm-inp');
   const text=inp.value.trim(); if(!text)return;
   inp.value='';
@@ -1394,9 +1331,9 @@ window.sendDM=async()=>{
     text,createdAt:serverTimestamp()
   });
   await addDoc(collection(db,'notifs'),{
-    toUid:dmUserId,fromUid:me.uid,fromName:myProf.name,
-    fromAva:myProf.avatar||'',type:'dm',
-    text:myProf.name+' написал тебе: "'+text.slice(0,30)+(text.length>30?'…':'')+'"',
+    toUid:dmUserId,fromUid:me.uid,fromName:myProf?.name||'Аноним',
+    fromAva:myProf?.avatar||'',type:'dm',
+    text:(myProf?.name||'Аноним')+' написал тебе: "'+text.slice(0,30)+(text.length>30?'…':'')+'"',
     read:false,createdAt:serverTimestamp()
   });
 };
